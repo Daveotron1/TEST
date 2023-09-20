@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
     const toolReasonMapping = {
         // Your existing tool-reason mapping
-        // ...
-        //... your toolReasonMapping object
         "1000": ["RepairSolutions2-Bluetooth-Pairing-Troubleshooting-Guide-For-Android", "RepairSolutions2-How-To-Report-An-Issue", 
         "How-to-run-a-Report-for-your-Check-Engine-Light", "How-to-reset-your-RepairSolutions2-Password", "Troubleshooting-guide-No-Green-LED-Light-on-the-Dongle",
         "OBDII-ELM327-APPs","RepairSolutions2-App-Subscription-Details", "Understanding-OBDII-DTC-Trouble-Codes", "Searching-for-a-Specific-Error-Code",
@@ -12,23 +11,30 @@ document.addEventListener('DOMContentLoaded', function () {
              
         "5110": ["Erasing-Diagnostic-Trouble-Codes-(DTCs)-with-Innova-5110", "Buttons-Are-Not-Responding", "Controls-and-Indicators-Explained",
         "Understanding-Display-Functions", "What-is-an-OBD-Monitor", "Code-Retrieval-Procedures", "Scanning-ABS"],
- 
+        //Tool-PDF\23-1000-001.pdf
         "3568": ["Test1"],
  
         "5568": ["Test2"],
-     };
-
-         // Mapping for PDF URLs
-        var pdfFiles = {
-
-        "1000": {"RepairSolutions2-Bluetooth-Pairing-Troubleshooting-Guide-For-Android": "./Tool-PDF/23-1000-001.pdf",
-        
-    },
-        //... other mappings
-        "5010_Tool-not-powering-on": "/path/to/your/Documents/ToolNotPoweringOn.pdf",
-        // add paths for other PDFs similarly
     };
- 
+
+    var pdfFiles = {
+        "1000": {
+            "RepairSolutions2-Bluetooth-Pairing-Troubleshooting-Guide-For-Android": "./Tool-PDF/23-1000-001.pdf",
+            // Add other mappings for the "1000" tool similarly
+        },
+        "5010": {
+            "Tool-not-powering-on": "/path/to/your/Documents/ToolNotPoweringOn.pdf",
+            // Add other mappings for the "5010" tool similarly
+        }
+        // ... and so on for other tools
+    };
+
+    function getPDFUrl(tool, reason) {
+        if (pdfFiles[tool] && pdfFiles[tool][reason]) {
+            return pdfFiles[tool][reason];
+        }
+        return null; // if not found
+    }
 
     function filterInnovaTools(partType) {
         let toolItems = document.querySelectorAll('.dropdown-menu[aria-labelledby="innovaToolButton"] .dropdown-item');
@@ -69,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.dropdown-menu[aria-labelledby="partTypeButton"] .dropdown-item').forEach(item => {
         item.addEventListener('click', function() {
             const selectedPart = this.textContent;
-            filterInnovaTools(this.getAttribute('data-value')); // Filtering tools based on part type
+            filterInnovaTools(this.getAttribute('data-value'));
             updateButtonDisplay('partTypeButton', selectedPart, 'Part Type');
-            updateButtonDisplay('innovaToolButton', 'Select a Tool', 'Innova Tools');  // Reset Innova Tools button text
-            updateButtonDisplay('reasonCategoryButton', 'Select a Reason', 'Reason Category');  // Reset Reason Category button text
+            updateButtonDisplay('innovaToolButton', 'Select a Tool', 'Innova Tools');
+            updateButtonDisplay('reasonCategoryButton', 'Select a Reason', 'Reason Category');
         });
     });
 
@@ -81,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const selectedTool = this.getAttribute('data-value');
             updateButtonDisplay('innovaToolButton', selectedTool, 'Innova Tools');
             updateReasonDropdown(selectedTool);
-            updateButtonDisplay('reasonCategoryButton', 'Select a Reason', 'Reason Category');  // Reset Reason Category button text
+            updateButtonDisplay('reasonCategoryButton', 'Select a Reason', 'Reason Category');
         });
     });
 
@@ -94,5 +100,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // You can continue here with the code to handle the PDF opening when "Search" is clicked.
+ 
+    document.getElementById('start-button').addEventListener('click', function() {
+        const selectedToolText = document.getElementById('innovaToolButton').innerText;
+        const selectedReasonText = document.getElementById('reasonCategoryButton').innerText;
+
+        const selectedTool = selectedToolText.split(": ")[1];
+        const selectedReason = selectedReasonText.split(": ")[1];
+
+        if (selectedTool !== "Select a Tool" && selectedReason !== "Select a Reason") {
+            const pdfUrl = getPDFUrl(selectedTool, selectedReason);
+            if (pdfUrl) {
+                window.open(pdfUrl, '_blank');
+            } else {
+                alert('No PDF found for the selected tool and reason.');
+            }
+        } else {
+            alert('Please make sure to select both a tool and a reason.');
+        }
+    });
+
 });
