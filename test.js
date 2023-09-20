@@ -21,14 +21,21 @@ document.addEventListener('DOMContentLoaded', function () {
          // Mapping for PDF URLs
         var pdfFiles = {
 
-        "1000": {"RepairSolutions2-Bluetooth-Pairing-Troubleshooting-Guide-For-Android": "./Tool-PDF/23-1000-001.pdf",
-        
+        "1000": {"RepairSolutions2-Bluetooth-Pairing-Troubleshooting-Guide-For-Android": "./PDF-Folder/Tool-PDF/23-1000-001.pdf",
+
     },
         //... other mappings
         "5010_Tool-not-powering-on": "/path/to/your/Documents/ToolNotPoweringOn.pdf",
         // add paths for other PDFs similarly
     };
  
+      // Function to get the PDF URL based on the selected tool and reason.
+      function getPDFUrl(tool, reason) {
+        if (pdfFiles[tool] && pdfFiles[tool][reason]) {
+            return pdfFiles[tool][reason];
+        }
+        return null; // if not found
+    }
 
     function filterInnovaTools(partType) {
         let toolItems = document.querySelectorAll('.dropdown-menu[aria-labelledby="innovaToolButton"] .dropdown-item');
