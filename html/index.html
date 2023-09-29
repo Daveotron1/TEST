@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>KB</title>
+</head>
+
+<body>
+    <nav class="navbar bg-secondary px-2 py-4">
+        <div class="container-fluid">
+            <img src="./images/logo-innova.jpeg" alt="Innova-logo" />
+            <span class="navbar-brand h1">
+                <h2>Knowledge Base</h2>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container-button px-4 py-5">
+        <h5 class="message p-2 px-5">To choose the Innova Tool and Reason Category, simply select the respective
+            Tabs. Once you're done, click 'Search' to proceed.</h5>
+        <div class="container-main px-5 py-2">
+            <div class="btn-group">
+                <button id="innovaToolButton" class="btn btn-secondary btn-lg dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Innova Tools
+                </button>
+                <div class="dropdown-menu" aria-labelledby="innovaToolButton">
+                    <a class="dropdown-item" href="#" data-value="">Select a Tool</a>
+                    <a class="dropdown-item" href="#" data-value="1000">1000</a>
+                    <a class="dropdown-item" href="#" data-value="5010">5010</a>
+                    <a class="dropdown-item" href="#" data-value="5110">5110</a>
+                    <a class="dropdown-item" href="#" data-value="5210">5210</a>
+                    <a class="dropdown-item" href="#" data-value="5310">5310</a>
+                    <a class="dropdown-item" href="#" data-value="5610">5610</a>
+                    <a class="dropdown-item" href="#" data-value="7111">7111</a>
+                    <a class="dropdown-item" href="#" data-value="Basic-Info">Basic Info</a>
+
+                </div>
+            </div>
+
+            <div class="btn-group ms-3">
+                <!-- Add the ms-3 class for a 10px margin to the left -->
+                <button id="reasonCategoryButton" class="btn btn-secondary btn-lg dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Reason Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="reasonCategoryButton">
+                    <a class="dropdown-item" href="#" data-value="">Select a Reason</a>
+
+                    <!--1000-->
+                    <a class="dropdown-item" href="#" data-value="Pairing-Troubleshooting">Pairing Troubleshooting</a>
+                    <a class="dropdown-item" href="#" data-value="Report-an-Issue">Report an Issue</a>
+                    <a class="dropdown-item" href="#" data-value="Running-a-Report">Running a Report</a>
+                    <a class="dropdown-item" href="#" data-value="Password-Reset">Password Reset</a>
+                    <a class="dropdown-item" href="#" data-value="No-Geen-LED">No Geen LED</a>
+                    <a class="dropdown-item" href="#" data-value="ELM327">ELM327</a>
+                    <a class="dropdown-item" href="#" data-value="Subscription-Details">Subscription Details</a>
+                    <a class="dropdown-item" href="#" data-value="OBDII-DTC">OBDII DTC</a>
+                    <a class="dropdown-item" href="#" data-value="Code-Details">Code Details</a>
+                    <a class="dropdown-item" href="#" data-value="Mode-6">Mode 6</a>
+
+                    <!--5010-->
+                    <a class="dropdown-item" href="#" data-value="No-Power">No Power</a>
+
+                    <!--5110-->
+                    <a class="dropdown-item" href="#" data-value="Erasing-DTCs">Erasing DTCs</a>
+                    <a class="dropdown-item" href="#" data-value="Buttons-Not-Responding">Buttons Not Responding</a>
+                    <a class="dropdown-item" href="#" data-value="Controls">Controls</a>
+                    <a class="dropdown-item" href="#" data-value="Understanding-Display-Functions">Understanding Display Functions</a>
+                    <a class="dropdown-item" href="#" data-value="What-is-an-OBD-Monitor">What is an OBD Monitor</a>
+                    <a class="dropdown-item" href="#" data-value="Code-Retrieval-Procedures">Code Retrieval Procedures</a>
+                    <a class="dropdown-item" href="#" data-value="Scanning-ABS">Scanning ABS</a>
+                    
+                    <!--5210-->
+                    <a class="dropdown-item" href="#" data-value="What-is-a-hot-key">What is a Hot Key</a>
+                    <a class="dropdown-item" href="#" data-value="Performing-a-battery-&-alternator-test">Performing a Battery & Alternator Test</a>
+                    <a class="dropdown-item" href="#" data-value="Viewing-LED-definitions-using-Innova-5210">Viewing LED Definitions using Innova 5210</a>
+                    <a class="dropdown-item" href="#" data-value="Innova-5210-damaged-usb-port">Innova 5210: Damaged USB Port</a>
+                    <a class="dropdown-item" href="#" data-value="Controls-and-Indicators">Controls and Indicators</a>
+                    <a class="dropdown-item" href="#" data-value="Display-Functions">Display Functions</a>
+                    <a class="dropdown-item" href="#" data-value="Code-Retrieval-Procedures">Code Retrieval Procedures</a>
+                    <a class="dropdown-item" href="#" data-value="Erasing-DTCs">Erasing DTCs</a>
+                    <a class="dropdown-item" href="#" data-value="Missing-ABS">Missing ABS</a>
+
+                    <!--5310-->
+                    <a class="dropdown-item" href="#" data-value="Navigating-to-System-Scans">Navigating to System Scans</a>
+                    <a class="dropdown-item" href="#" data-value="Controls-and-Indicators">Controls and Indicators</a>
+                    <a class="dropdown-item" href="#" data-value="Display-Functions">Display Functions</a>
+                    <a class="dropdown-item" href="#" data-value="MIL-Check-Engine">MIL Check Engine</a>
+                    <a class="dropdown-item" href="#" data-value="Anti-Lock-Braking">Anti-Lock Braking</a>
+                    <a class="dropdown-item" href="#" data-value="Vehicle-Airbag-System">Vehicle Airbag System</a>
+                    <a class="dropdown-item" href="#" data-value="OEM-Enhanced-DTC">OEM Enhanced DTCs</a>
+                    <a class="dropdown-item" href="#" data-value="OEM-Ford/Mazda">OEM DTCs for Ford/Mazda</a>
+
+                    <!--5610-->
+                    <a class="dropdown-item" href="#" data-value="How-to-Replace-Batteries">How to Replace Batteries</a>
+                    <a class="dropdown-item" href="#" data-value="Tool-Not-Linking-to-Vehicle">Tool Not Linking to Vehicle</a>
+                    <a class="dropdown-item" href="#" data-value="Navigating-Innova.com-to-find-tool-manuals">Navigating Innova.com to find tool manuals</a>
+                    <a class="dropdown-item" href="#" data-value="Cracked-Screen">Cracked Screen</a>
+                    <a class="dropdown-item" href="#" data-value="Aftermarket-OBD1-Extensions-and-Adapters">Aftermarket OBD1 Extensions and Adapters</a>
+                    <a class="dropdown-item" href="#" data-value="Navigating-System-Scans">Navigating to your System Scans</a>
+                    <a class="dropdown-item" href="#" data-value="Scanning-DTCs-for-MIL">MIL Check Engine Light</a>
+                    <a class="dropdown-item" href="#" data-value="Anti-Lock-Braking-Systems">Anti-Lock Braking Systems</a>
+                    <a class="dropdown-item" href="#" data-value="Airbag-System">Airbag-System</a>
+                    <a class="dropdown-item" href="#" data-value="Tire-Pressure-System">Tire Pressure System</a> 
+                    <a class="dropdown-item" href="#" data-value="OEM-Enhanced-DTCs">OEM Enhanced DTCs</a>
+
+                    <!--7111-->
+                    <a class="dropdown-item" href="#" data-value="Step-by-Step-Guide-to-Update-your-Innova-7111-Tablet">Step-by-Step Guide to Update your Innova 7111 Tablet</a>
+                    <a class="dropdown-item" href="#" data-value="Battery-Troubleshooting-Guide">Battery Troubleshooting Guide</a>
+                    <a class="dropdown-item" href="#" data-value="Troubleshooting-Vehicle-Communication-Interface-(VCI)-Connector-Errors-on-Innova-7111-Scan-Tool">Troubleshooting Vehicle Communication Interface (VCI) Connector Errors on Innova 7111 Scan Tool</a>
+                    <a class="dropdown-item" href="#" data-value="Turning-off-the-Oil-Warning-Light-using-Innova-7111-Tablet">Turning off the Oil Warning Light using Innova 7111 Tablet</a>
+                    <a class="dropdown-item" href="#" data-value="Using-Special-Function-with-Innova-7111-Scan-Tool-Tablet">Using Special Function with Innova 7111 Scan Tool Tablet</a>
+                    <a class="dropdown-item" href="#" data-value="Performing-ABS-Bleeding-with-Innova-7111-Tablet">Performing ABS Bleeding with Innova 7111 Tablet</a>
+                    <a class="dropdown-item" href="#" data-value="How-To-Perform-Electronic-Parking-Brake-(EPB)-Calibration">How To Perform Electronic Parking Brake (EPB) Calibration</a>
+                    <a class="dropdown-item" href="#" data-value="Perform-the-Steering-Angle-Sensor-Calibration-Function">Perform the Steering Angle Sensor Calibration Function</a>
+                    <a class="dropdown-item" href="#" data-value="Transmission-Fluid-Temperature">Transmission Fluid Temperature</a>
+                    <a class="dropdown-item" href="#" data-value="Step-by-Step-Guide-for-Troubleshooting-SDS-7111-Stuck-at-99%">Step-by-Step Guide for Troubleshooting SDS 7111 Stuck at 99%</a>
+                    <a class="dropdown-item" href="#" data-value="Dead-Battery">Dead Battery</a>
+                    <a class="dropdown-item" href="#" data-value="Cracked-Screen">Cracked Screen</a>
+                    <a class="dropdown-item" href="#" data-value="Clearing-CEL/MIL">Clearing CEL/MIL</a>
+                    <a class="dropdown-item" href="#" data-value="Battery-Replacement">Battery Replacement</a>
+
+                    <!--Basic Info-->
+                    <a class="dropdown-item" href="#" data-value="Trade-In">Trade-In Program</a>
+                    <a class="dropdown-item" href="#" data-value="Vehicle-Routines">Vehicle Routines</a>
+                    <a class="dropdown-item" href="#" data-value="Trouble-Codes">Trouble Codes</a>
+                    <a class="dropdown-item" href="#" data-value="ABS">ABS</a>
+                    <a class="dropdown-item" href="#" data-value="Bi-Directional">Bi-Directional</a>
+                    <a class="dropdown-item" href="#" data-value="DPF">DPF Regen.</a>
+                    <a class="dropdown-item" href="#" data-value="Module-Scan">All Module Scan</a>
+                    <a class="dropdown-item" href="#" data-value="Mode-6">Mode 6</a>
+                    <a class="dropdown-item" href="#" data-value="TroubleShooting-Guide">TroubleShooting Guide</a>
+                    <a class="dropdown-item" href="#" data-value="Scratched-Screen">Scratched Screen</a>
+
+                </div>
+            </div>
+            
+            <button id="start-button" type="button" class="btn btn-primary btn-lg ms-3" onclick="startSearch()"
+                disabled>Search</button>
+
+            <script src="/index1.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+</html>
